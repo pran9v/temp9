@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>socksy - handbag Store</title>
+        <!-- Favicon -->
+        <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon.jpg">
+        <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon.jpg">
+        <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon.jpg">
+        <link rel="manifest" href="./assets/site.webmanifest">
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">
+                <a href="index.html">
+                    <img src="./assets/logo.jpg" alt="">
+                </a>
+            </div>
+            <ul>
+                <li><a href="index.html#products"><i class="fas fa-shopping-basket"></i> Products</a></li>
+                <li><a href="privacy.html"><i class="fas fa-user-lock"></i> Privacy</a></li>
+                <li><a href="terms.html"><i class="fas fa-file-alt"></i> Terms</a></li>
+                <li><a href="contact.html"><i class="fas fa-phone"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="products-page">
+        <div class="products-header">
+            <h1>Our Collection</h1>
+            <p>Discover our curated selection of luxury fashion items</p>
+        </div>
+
+        <div class="products-filters">
+            <div class="search-bar">
+                <input type="text" placeholder="Search products..." id="searchInput">
+                <button onclick="filterProducts()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filter-options">
+                <select name="category" onchange="filterProducts()">
+                    <option value="">All Categories</option>
+                    <option value="winter">Winter Jackets</option>
+                    <option value="rain">Rain Jackets</option>
+                    <option value="sports">Sports Jackets</option>
+                    <option value="casual">Casual Jackets</option>
+                </select>
+                <select name="price" onchange="filterProducts()">
+                    <option value="">Price Range</option>
+                    <option value="0-25">Under $25</option>
+                    <option value="25-50">$25 - $50</option>
+                    <option value="50+">Over $50</option>
+                </select>
+                <select name="sort" onchange="filterProducts()">
+                    <option value="">Sort By</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="newest">Newest First</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="products-grid extended">
+            <!-- Products will be loaded here dynamically -->
+        </div>
+    </main>
+
+  
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./assets/logo.jpg" alt="">
+                    </a>
+                </div>
+                <p>Find the Perfect Baby Socks for Your Little One.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <ul class="contact-info">
+                   
+                    <li><i class="fas fa-envelope"></i> info@socksy.site</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe to get special offers and updates.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" class="footer-input">
+                    <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 socksy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Add filtering functionality
+        function filterProducts() {
+            const category = document.querySelector('select[name="category"]').value;
+            const priceRange = document.querySelector('select[name="price"]').value;
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const sortBy = document.querySelector('select[name="sort"]').value;
+
+            let filtered = products;
+
+            // Apply category filter
+            if (category) {
+                filtered = filtered.filter(product => product.category === category);
+            }
+
+            // Apply price filter
+            if (priceRange) {
+                const [min, max] = priceRange.split('-').map(Number);
+                filtered = filtered.filter(product => {
+                    if (max) {
+                        return product.price >= min && product.price <= max;
+                    }
+                    return product.price >= min;
+                });
+            }
+
+            // Apply search filter
+            if (searchTerm) {
+                filtered = filtered.filter(product => 
+                    product.name.toLowerCase().includes(searchTerm) ||
+                    product.description.toLowerCase().includes(searchTerm)
+                );
+            }
+
+            // Apply sorting
+            if (sortBy) {
+                switch(sortBy) {
+                    case 'price-low':
+                        filtered.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-high':
+                        filtered.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'newest':
+                        filtered.reverse(); // Assuming newest products are at the end of the array
+                        break;
+                }
+            }
+
+            displayProducts(filtered);
+        }
+
+        // Add event listener for search input
+        document.getElementById('searchInput').addEventListener('input', filterProducts);
+    </script>
+</body>
+</html> 

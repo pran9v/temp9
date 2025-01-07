@@ -1,0 +1,73 @@
+{
+    "products": [
+        {
+            "id": "1",
+            "name": "Cute Non-Slip Socks",
+            "price": 10.33,
+            "description": "6 pairs of kids' cotton blend crew socks, non-slip, breathable, soft, and elastic, perfect for indoor use and all seasons.",
+            "image": "https://img.kwcdn.com/product/fancy/1f86855c-7edf-4142-ae07-4e2d87bb1ce3.jpg?imageView2/2/w/800/q/70/format/webp",
+            "category": "table",
+            "badge": "Bestseller",
+            "features": [
+                "6 pairs of kids' cotton blend socks",
+                "Non-slip and breathable design",
+                "Soft and elastic for all-day comfort",
+                "Perfect for indoor and all-season wear"
+            ],
+            "inStock": true,
+            "freeShipping": true
+        },
+        {
+            "id": "2",
+            "name": "Cartoon Floor Socks",
+            "price": 7.27,
+            "description": "6 pairs of cute cartoon animal knitted floor socks, non-slip, breathable, and comfortable, ideal for baby girls and boys.",
+            "image": "https://img.kwcdn.com/product/fancy/30598619-af8f-435e-9b8d-446efa17bb79.jpg?imageView2/2/w/800/q/70/format/webp",
+            "category": "floor",
+            "badge": "Popular",
+            "features": [
+                "Cute cartoon animal design",
+                "Non-slip for added safety",
+                "Breathable and comfortable",
+                "Ideal for baby girls and boys"
+            ],
+            "inStock": true,
+            "freeShipping": true
+        },
+        {
+            "id": "3",
+            "name": "Breathable Cartoon Socks",
+            "price": 9.07,
+            "description": "6pcs boys' cartoon animal non-slip socks with grips, breathable, warm, perfect for fall/winter, suitable for home, parties, and outdoors.",
+            "image": "https://img.kwcdn.com/product/fancy/4d4c8a3f-780c-4e86-9087-8b1fc5b121e8.jpg?imageView2/2/w/800/q/70/format/webp",
+            "category": "desk",
+            "badge": "Sale",
+            "features": [
+                "6 pairs of boys' cartoon socks",
+                "Non-slip grips for stability",
+                "Breathable and warm for fall/winter",
+                "Ideal for home, parties, and outdoor use"
+            ],
+            "inStock": true,
+            "freeShipping": true
+        },
+        {
+            "id": "4",
+            "name": "Bow Knee-High Socks",
+            "price": 6.32,
+            "description": "8 pairs of girls' solid color knee-high socks with bow decor, comfy, breathable, soft, non-slip, ideal for daily and outdoor wear in spring and summer.",
+            "image": "https://img.kwcdn.com/product/fancy/001d17bb-2a4e-4806-8c68-8a9c3f2e9408.jpg?imageView2/2/w/800/q/70/format/webp",
+            "category": "pendant",
+            "badge": "New",
+            "features": [
+                "8 pairs of solid color knee-high socks",
+                "Bow decor for added style",
+                "Comfy, breathable, and soft fabric",
+                "Non-slip design for secure wear",
+                "Perfect for daily and outdoor wear in spring and summer"
+            ],
+            "inStock": true,
+            "freeShipping": true
+        }
+    ]
+}
