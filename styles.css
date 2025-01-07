@@ -646,7 +646,7 @@ footer {
 }
 
 .submit-btn {
-    background: linear-gradient(45deg, rgb(174, 174, 174), rgb(0, 0, 0));
+    background: linear-gradient(45deg, rgb(248, 19, 19), rgb(248, 125, 168));
     color: white;
     border: none;
     padding: 1rem 2rem;
@@ -664,7 +664,7 @@ footer {
 }
 
 .submit-btn:hover {
-    background: linear-gradient(45deg, rgb(0, 0, 0), rgb(174, 174, 174));
+    background: linear-gradient(45deg, rgb(248, 125, 168), rgb(248, 19, 19));
     transform: translateY(-2px);
 }
 
